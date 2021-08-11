@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <!-- Javascript Validation -->
+    <form novalidate id="jsValidation" style="margin-top: 100px">
+      <fieldset>
+        <legend>Form validation using JavaScript
+          <abbr title="All fields are mandatory" aria-label="required"></abbr>
+        </legend>
+        <p>All fields are mandatory.</p>
+        <p>
+          <label for="emailInput">
+            <span>Email address:</span>
+            <input autofocus required type="email" id="emailInput" name="emailInput" 
+            autocomplete="on" minlength="6" class="invalidInput">
+            <span id="emailMsg" aria-live="polite"></span>
+          </label>
+        </p>
+        <p>
+          <label for="countryInput">
+            <span>Country:</span>
+            <input required type="text" id="countryInput" name="countryInput" 
+            autocomplete="on" minlength="2" class="invalidInput">
+            <span id="countryMsg" aria-live="polite"></span>
+          </label>
+        </p>
+        <p>
+          <label for="zipInput">
+            <span>Postal code:</span>
+            <input required type="text" id="zipInput" name="zipInput" autocomplete="on"
+            minlength="6" class="invalidInput">
+            <span id="zipMsg" aria-live="polite"></span>
+          </label>
+        </p>
+        <p>
+          <label for="pwInput">
+            <span>Password: The Password must be at least 8 characters long containing a lowercase letter, an uppercase letter, a number, one of !@#$%^&*()`~, and no spaces.
+            </span>
+            <input required type="password" id="pwInput" name="pwInput" minlength="8" 
+            class="invalidInput"> 
+            <span id="pwMsg" aria-live="polite"></span>
+          </label>
+        </p>
+        <p>
+          <label for="pwConfInput">
+            <span>Confirm Password: 
+            </span>
+            <input required type="password" id="pwConfInput" name="pwConfInput" minlength="8" 
+            class="invalidInput"> 
+            <span id="pwConfMsg" aria-live="polite"></span>
+          </label>
+        </p>
+
+        <div class="subBtnDiv">
+          <button>Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  
+  <!-- HTML Validation -->
+  <form id="htmlValidation" style="margin-top: 100px">
+    <fieldset>
+      <legend>Form validation using HTML
+        <abbr title="All fields are mandatory" aria-label="required"></abbr>
+      </legend>
+      <p>All fields are mandatory.</p>
+      <p>
+        <label for="email">
+          <span>Email address:</span>
+          <!-- Attribute type="email" requires something before and after the @ -->
+          <input required type="email" id="email" name="email" 
+          minlength="5" autocomplete="on">
+        </label>
+      </p>
+      <p>
+        <label for="country1">
+          <span>Country:</span>
+          <!-- requires at least 1 char -->
+          <input required type="text" id="country1" name="country1" 
+          autocomplete="on">
+        </label>
+      </p>
+      <p>
+        <label for="zip1">
+          <span>Postal code:</span>
+          <!-- requires at least 5 char -->
+          <input required type="text" id="zip1" name="zip1" minlength="5">
+        </label>
+      </p>
+      <p>
+        <label for="pw1">
+          <span>Password:</span>
+          <input required type="password" id="pw1" name="pw1"
+           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()`~]).{8,}$" 
+           title="Must be at least 8 characters containing a lowercase letter, an uppercase letter, a number, and one character: !@#$%^&*()`~.">
+          <!-- Note: The HTML pattern attribute does not accept regexp flags, so [a-zA-Z] is the only way to match the pattern in a case-insensitive way. -->
+        </label>
+        <p>
+          The Password must be at least 8 characters long containing a lowercase letter, an uppercase letter, a number, one of !@#$%^&*()`~, and no spaces.
+        </p>
+      </p>
+      <div class="subBtnDiv">
+        <button>Submit</button>
+      </div>
+    </fieldset>
+  </form>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -68,3 +68,8 @@ fieldset {
   border: 1px solid #333;
   box-sizing: border-box;
 }
+
+ .required:after {
+    content:" *";
+    color: red;
+ }

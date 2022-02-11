@@ -12,11 +12,12 @@
       <fieldset>
         <legend>Form validation using JavaScript
           <abbr title="All fields are mandatory" aria-label="required"></abbr>
+
         </legend>
-        <p>All fields are mandatory.</p>
+        <span>All fields labelled </span><code style="color:red"> * </code><span>are mandatory.</span>
         <p>
           <label for="emailInput">
-            <span>Email address:</span>
+            <span class="required">Email address</span>
             <input autofocus required type="email" id="emailInput" name="emailInput" 
             autocomplete="on" minlength="6" class="invalidInput">
             <span id="emailMsg" aria-live="polite"></span>
@@ -24,7 +25,7 @@
         </p>
         <p>
           <label for="countryInput">
-            <span>Country:</span>
+            <span class="required">Country</span>
             <input required type="text" id="countryInput" name="countryInput" 
             autocomplete="on" minlength="2" class="invalidInput">
             <span id="countryMsg" aria-live="polite"></span>
@@ -32,7 +33,7 @@
         </p>
         <p>
           <label for="zipInput">
-            <span>Postal code:</span>
+            <span class="required">Postal code</span>
             <input required type="text" id="zipInput" name="zipInput" autocomplete="on"
             minlength="6" class="invalidInput">
             <span id="zipMsg" aria-live="polite"></span>
@@ -40,8 +41,8 @@
         </p>
         <p>
           <label for="pwInput">
-            <span>Password: The Password must be at least 8 characters long containing a lowercase letter, an uppercase letter, a number, one of !@#$%^&*()`~, and no spaces.
-            </span>
+            <span class="required">Password: The Password must be at least 8 characters long containing a lowercase letter, 
+              an uppercase letter, a number, one of !@#$%^&*()`~, and no spaces.</span>
             <input required type="password" id="pwInput" name="pwInput" minlength="8" 
             class="invalidInput"> 
             <span id="pwMsg" aria-live="polite"></span>
@@ -49,8 +50,7 @@
         </p>
         <p>
           <label for="pwConfInput">
-            <span>Confirm Password: 
-            </span>
+            <span class="required">Confirm Password</span>
             <input required type="password" id="pwConfInput" name="pwConfInput" minlength="8" 
             class="invalidInput"> 
             <span id="pwConfMsg" aria-live="polite"></span>
@@ -69,10 +69,10 @@
       <legend>Form validation using HTML
         <abbr title="All fields are mandatory" aria-label="required"></abbr>
       </legend>
-      <p>All fields are mandatory.</p>
+      <span>All fields labelled </span><code style="color:red"> * </code><span>are mandatory.</span>
       <p>
         <label for="email">
-          <span>Email address:</span>
+          <span class="required">Email address</span>
           <!-- Attribute type="email" requires something before and after the @ -->
           <input required type="email" id="email" name="email" 
           minlength="5" autocomplete="on">
@@ -80,7 +80,7 @@
       </p>
       <p>
         <label for="country1">
-          <span>Country:</span>
+          <span class="required">Country</span>
           <!-- requires at least 1 char -->
           <input required type="text" id="country1" name="country1" 
           autocomplete="on">
@@ -88,14 +88,14 @@
       </p>
       <p>
         <label for="zip1">
-          <span>Postal code:</span>
+          <span class="required">Postal code</span>
           <!-- requires at least 5 char -->
           <input required type="text" id="zip1" name="zip1" minlength="5">
         </label>
       </p>
       <p>
         <label for="pw1">
-          <span>Password:</span>
+          <span class="required">Password</span>
           <input required type="password" id="pw1" name="pw1"
            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()`~]).{8,}$" 
            title="Must be at least 8 characters containing a lowercase letter, an uppercase letter, a number, and one character: !@#$%^&*()`~.">
